@@ -1,0 +1,124 @@
+.container {
+    background-color: #f6f6f6;
+    min-height: fit-content;
+    border-radius: 10px;
+    width: 21rem;
+    padding: 0 20px;
+}
+.header {
+    text-align: center;
+    color: #1155cc;
+    font-size: 30px;
+    margin: 15px 0;
+}
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 6px 0;
+}
+.formContainer label {
+    font-size: 20px;
+    margin: 7px 0 ;
+}
+.formContainer span {
+    background-color: #ff1447;
+    width: fit-content;
+    color: #fff;
+    font-size: 13px;
+    padding: 3px 5px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+.complete {
+    border: 0;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: #e9e9e9;
+    font-size: 15px;
+    text-indent: 15px;
+    transition: all .3s ease;
+    border: 1px solid silver;
+}
+.error {
+    border: 0;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: #e9e9e9;
+    font-size: 15px;
+    text-indent: 15px;
+    transition: all .3s ease;
+    border: 1px solid #ff1447;
+}
+.complete:focus,
+.error:focus {
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #1155cc;
+}
+.formContainer:nth-child(6) label {
+    color: #1155cc;
+    font-size: 13px;
+}
+.formContainer:nth-child(6) {
+    height: 4rem;
+}
+.isacceptform {
+    display: flex;
+    align-items: center;
+    margin: 10px 0 -5px 0;
+}
+.isacceptform label {
+    margin-right: 10px;
+}
+.isacceptform input:focus {
+    border-radius: 50%;
+}
+input[type="checkbox"] {
+    transform: scale(1.2);
+    border-radius: 50px;
+}
+input[type="checkbox"]:checked {
+    border-radius: 50%;
+}
+.formButtons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.formButtons button {
+    padding: 10px 20px;
+    border: 0;
+    background-color: #1155cc;
+    color: #e9e9e9;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    transition:  all .2s ease;
+}
+.formButtons button:hover {
+    background-color: rgba(17, 85, 204, .9);
+}
+.formButtons a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #1155cc;
+    position: relative;
+    cursor: pointer;
+}
+.formButtons a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #1155cc;
+    transform: scale(0);
+    transform-origin: left;
+    transition: all .3s ease;
+}
+.formButtons a:hover::after {
+    transform: scale(1);
+}
