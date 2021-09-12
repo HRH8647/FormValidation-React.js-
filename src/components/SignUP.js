@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Link} from 'react-router-dom';
 
 import { validate } from './validate';
 import { toastify } from './toastify';
@@ -20,7 +21,7 @@ const SignUP = () => {
     const [touch, setTouch] = useState({});
 
     useEffect(() => {
-        setErrors(validate(data))
+        setErrors(validate(data , "signup"))
     }, [data , touch])
     const changeHandler = (e) => {
         if (e.target.name === "isaccept") {
@@ -117,7 +118,8 @@ const SignUP = () => {
                     {errors.isaccept && touch.isaccept && <span>{errors.isaccept}</span>}
                 </div>
                 <div className={styles.formButtons}>
-                    <a href="#">Login</a>
+                    <Link to="/login">Login</Link>
+                    {/* <a href="#">Login</a> */}
                     <button type="submit">Signup</button>
                 </div>
                 <ToastContainer />
