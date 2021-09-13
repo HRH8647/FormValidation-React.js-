@@ -9,7 +9,7 @@ import { toastify } from './toastify';
 import styles from './Login.module.css';
 
 const Login = () => {
-    // new
+    
     const [data, setDate] = useState({
         email: "",
         password: ""
