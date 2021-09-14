@@ -97,3 +97,12 @@
 .formButtons a:hover::after {
     transform: scale(1);
 }
+.forgotten {
+    margin: 15px 0;
+}
+.forgotten a {
+    color: #1155cc;
+}
+.forgotten a:hover {
+    color: #c50d07;
+}
