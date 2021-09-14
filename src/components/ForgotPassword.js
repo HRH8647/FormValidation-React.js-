@@ -8,17 +8,16 @@ import { toastify } from './toastify';
 
 import styles from './Login.module.css';
 
-const Login = () => {
-    document.title = "Login";
+const ForgotPassword = () => {
+    document.title = "ForgotPassword";
     const [data, setDate] = useState({
         email: "",
-        password: ""
     })
     const [errors, setErrors] = useState({});
     const [touch, setTouch] = useState({});
 
     useEffect(() => {
-        setErrors(validate(data))
+        setErrors(validate(data , "forgot"));
     }, [data , touch])
     const changeHandler = (e) => {
         setDate({ ...data, [e.target.name]: e.target.value })
@@ -29,19 +28,18 @@ const Login = () => {
     const submitHandler = (e) => {
         e.preventDefault();
         if(!Object.keys(errors).length) {
-            toastify("You Logged up successfully" , "success");
+            toastify("Check your email to reset your password" , "success");
         } else {
-            toastify("Invalid Data" , "error");
+            toastify("Please enter your email" , "error");
             setTouch({
                 email: true,
-                password: true
             })
         }
     }
     return (
         <div className={styles.container}>
             <form onSubmit={submitHandler}>
-                <h3 className={styles.header}>Login</h3>
+                <h3 className={styles.header}>Reset Password</h3>
                 
                 <div className={styles.formContainer}>
                     <label>Email</label>
@@ -56,27 +54,10 @@ const Login = () => {
                     />
                     {errors.email && touch.email && <span>{errors.email}</span>}
                 </div>
-                <div className={styles.formContainer}>
-                    <label>Password</label>
-                    <input
-                    className={(errors.password && touch.password) ? styles.error : styles.complete} 
-                    type="password" 
-                    name="password" 
-                    value={data.password}
-                    placeHolder="Please set password" 
-                    onChange={changeHandler} 
-                    onFocus={focusHandler} 
-                    />
-                    {errors.password && touch.password && <span>{errors.password}</span>}
-                </div>
-
-                <div className={styles.forgotten}>
-                    <Link to="/forgot-password">Forgot Password</Link>
-                </div>
-                
+            
                 <div className={styles.formButtons}>
-                    <Link to="/signup">Signup</Link>
-                    <button type="submit">Login</button>
+                    <Link to="/login">Login</Link>
+                    <button type="submit">Reset</button>
                 </div>
                 <ToastContainer />
             </form>
@@ -84,4 +65,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default ForgotPassword;

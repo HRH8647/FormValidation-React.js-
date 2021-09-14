@@ -119,7 +119,6 @@ const SignUP = () => {
                 </div>
                 <div className={styles.formButtons}>
                     <Link to="/login">Login</Link>
-                    {/* <a href="#">Login</a> */}
                     <button type="submit">Signup</button>
                 </div>
                 <ToastContainer />
